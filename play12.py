@@ -35,7 +35,8 @@ def measure_throughput(processes, timeout):
         p.join()
         print('JOINED:', p, p.is_alive())
         list_cnt.append(return_dict[i])
-    print("Result:", sum(list_cnt))
+    print("Result count:", sum(list_cnt))
+    print("Result throughput (1/sec):", sum(list_cnt)/timeout)
 
 if __name__ == '__main__':
     measure_throughput(processes=100, timeout=5)
